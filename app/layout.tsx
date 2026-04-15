@@ -25,7 +25,7 @@ export default function RootLayout({
         </header>
 
         {/* Main content grows to fill available space */}
-        <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 py-8">
+        <main className="flex-1 w-full py-8">
           {children}
         </main>
 
