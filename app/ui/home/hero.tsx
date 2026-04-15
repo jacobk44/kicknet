@@ -38,21 +38,20 @@ export default function Hero({ index }: { index: number }) {
   return (
     <Link href={current.href} className="block">
       <section
-        className="w-full h-[50vh] md:h-[85vh] text-white flex items-center bg-center bg-cover cursor-pointer"
+        className="w-full min-h-[50vh] md:min-h-[85vh] overflow-hidden text-white flex items-center bg-center bg-cover cursor-pointer"
         style={
           isLimited
             ? { backgroundImage: `url(${current.desktopImage})` }
             : undefined
         }
       >
-        {/* overlay */}
         <div
-          className={`w-full flex flex-col md:flex-row items-center justify-between px-25 md:px-16 ${
+          className={`w-full flex flex-col md:flex-row items-center justify-between px-6 md:px-16 ${
             isLimited ? "bg-black/40 h-full" : current.bg
           }`}
         >
           <div>
-            <h1 className="font-bold uppercase leading-tight mt-10 md:mt-16 text-3xl md:text-7xl">
+            <h1 className="font-bold uppercase leading-tight text-3xl md:text-3xl">
               <span>
                 {current.title}
                 <span className="text-blue-300 text-5xl md:text-7xl ml-2">
@@ -70,7 +69,7 @@ export default function Hero({ index }: { index: number }) {
               width={400}
               height={400}
               priority
-              className="mt-10 md:hidden transition-all duration-700 rotate-[-10deg] h-auto"
+              className="mt-4 md:hidden transition-all duration-700 rotate-[-10deg] h-auto"
             />
           )}
 

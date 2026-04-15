@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <Hero index={index} />
 
-      <section className="text-center py-25">
+      <section className="text-center py-10">
         <h2 className="text-xl font-semibold">Your Seasonal Refresh</h2>
         <h3 className="text-sm">Save up to 30% on key styles now</h3>
         <div className="mt-1 flex justify-center">

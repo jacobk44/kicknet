@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import NavLinks from "./nav-link"; // other links like Home, Cart, etc.
+import NavLinks from "./nav-link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,66 +21,65 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50 w-full">
+    <nav className="bg-black shadow-md sticky top-0 z-50 w-full text-white">
       <div className="w-full px-4">
         {/* TOP ROW */}
         <div className="flex items-center h-16 w-full">
-          {/* LEFT: Hamburger */}
+          {/* HAMBURGER */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-gray-700 text-xl">
+            <button onClick={toggleMenu} className="text-white text-xl">
               {isOpen ? "✖" : "☰"}
             </button>
           </div>
 
-          {/* CENTER: Logo */}
+          {/* LOGO */}
           <div className="flex-1 flex justify-center md:justify-start">
-            <span className="text-lg md:text-xl font-bold text-blue-700">
+            <span className="text-lg md:text-xl font-bold text-white">
               KICKNET
             </span>
           </div>
 
-          {/* DESKTOP: Search */}
+          {/* DESKTOP SEARCH (WHITE) */}
           <div className="hidden md:flex flex-1 max-w-xs mx-6">
             <input
               type="text"
               placeholder="Search sneakers..."
-              className="w-full px-3 py-1 text-sm border rounded-md"
+              className="w-full px-3 py-2 text-sm bg-white text-black rounded-md border border-gray-300 placeholder-gray-500"
             />
           </div>
 
-          {/* DESKTOP: NavLinks */}
+          {/* DESKTOP NAV LINKS */}
           <div className="hidden md:flex items-center gap-6 ml-auto">
             <NavLinks />
           </div>
 
-          {/* MOBILE: NavLinks icons */}
+          {/* MOBILE ICONS */}
           <div className="md:hidden flex ml-auto">
             <NavLinks />
           </div>
         </div>
 
-        {/* DESKTOP CATEGORIES SUBMENU */}
-        <div className="hidden md:flex justify-center gap-4 border-t border-gray-200 bg-gray-50 py-2">
+        {/* DESKTOP CATEGORIES */}
+        <div className="hidden md:flex justify-center gap-4 bg-black py-2 border-t border-white/10">
           {categories.map((cat) => (
             <Link
               key={cat.name}
               href={cat.href}
-              className="px-3 py-1 rounded-md hover:bg-sky-100 hover:text-blue-600 font-medium text-gray-700 text-sm"
+              className="px-3 py-1 rounded-md text-white hover:bg-white/10 text-sm"
             >
               {cat.name}
             </Link>
           ))}
         </div>
 
-        {/* MOBILE SEARCH BAR */}
-        <div className="md:hidden pb-3 border-t">
-          <div className="flex items-center mt-3 border rounded-full px-4 py-2 bg-gray-100">
+        {/* MOBILE SEARCH (same style as desktop) */}
+        <div className="md:hidden px-4 py-2 border-t border-white/10">
+          <div className="w-full">
             <input
               type="text"
               placeholder="Search sneakers..."
-              className="w-full text-sm bg-transparent outline-none"
+              className="w-full px-3 py-2 text-sm bg-white text-black rounded-md border border-gray-300 placeholder-gray-500"
             />
-            <span className="text-gray-500 text-lg ml-2">🔍</span>
           </div>
         </div>
       </div>
@@ -88,12 +87,12 @@ export default function Navbar() {
       {/* MOBILE MENU */}
       {isOpen && (
         <div className="md:hidden px-4 pb-4">
-          <div className="flex flex-col gap-2 border-t pt-3">
+          <div className="flex flex-col gap-2 border-t border-white/10 pt-3">
             {categories.map((cat) => (
               <Link
                 key={cat.name}
                 href={cat.href}
-                className="block py-2 px-2 rounded-md hover:bg-sky-100 hover:text-blue-600 font-medium text-gray-700 text-sm"
+                className="block py-2 px-2 rounded-md text-white hover:bg-white/10 text-sm"
               >
                 {cat.name}
               </Link>
